@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Raij Tarot | Spell Work &amp; Tarot</title>
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#1a1025" />
+<link rel="apple-touch-icon" href="/icons/icon-1024.png" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -885,6 +888,11 @@
   });
 </script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
 <script>
   function fmt(price) {
     return price % 1 === 0 ? `$${price}` : `$${price.toFixed(2)}`;
