@@ -594,8 +594,7 @@
 
   <p class="hero-eyebrow">Spell Work &amp; Tarot</p>
   <h1 class="hero-title">Raij<span> </span>Tarot</h1>
-  <p class="hero-tagline">Old energy dies here.</p>
-  <p class="hero-sub">raijtarot.com</p>
+  <p class="hero-tagline" id="hero-tagline">Old energy dies here.</p>
 
   <div class="hero-divider"><span>✦</span></div>
 
@@ -819,6 +818,13 @@
     const d = Math.round(price * 0.5 * 100) / 100;
     return fmt(d);
   }
+
+  // Load hero
+  fetch('/_data/hero.json')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('hero-tagline').textContent = data.tagline;
+    });
 
   // Load about
   fetch('/_data/about.json')

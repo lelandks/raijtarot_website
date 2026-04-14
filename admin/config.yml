@@ -5,6 +5,15 @@ backend:
 media_folder: "images"
 
 collections:
+  - name: "hero"
+    label: "Hero"
+    files:
+      - label: "Hero"
+        name: "hero"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string", hint: "The bold one-liner displayed under the site title." }
+
   - name: "testimonials"
     label: "Testimonials"
     files:
