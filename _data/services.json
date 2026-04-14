@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "name": "Candles & Spell Work",
+      "services": [
+        { "name": "Prepared Candles", "price": 10 },
+        { "name": "Candle Spells", "price": 30 },
+        { "name": "Custom Spell Work", "price": 35, "price_display": "$35 – $150", "range": true },
+        { "name": "Binding", "price": 63 },
+        { "name": "Cord Cutting", "price": 63 }
+      ]
+    },
+    {
+      "name": "Limpias & Washes",
+      "services": [
+        { "name": "Limpia de Huevo (egg)", "price": 26 },
+        { "name": "Herb Limpia", "price": 26 },
+        { "name": "Fire Limpia", "price": 27 },
+        { "name": "Road Opener Floor Wash", "price": 35 },
+        { "name": "Spiritual Bath", "price": 35 },
+        { "name": "House Limpia", "price": 116 }
+      ]
+    },
+    {
+      "name": "Tarot Reading",
+      "services": [
+        { "name": "Card of the Day", "price": 8 },
+        { "name": "Yes or No", "price": 17 },
+        { "name": "3 Card Pull", "price": 26 },
+        { "name": "Weekly Forecast", "price": 26, "duration": "45 min" },
+        { "name": "General Reading", "price": 35, "duration": "60 min" },
+        { "name": "Career Reading", "price": 44, "duration": "60 min" },
+        { "name": "Finances Reading", "price": 44, "duration": "60 min" },
+        { "name": "Relationship Reading", "price": 45, "duration": "60 min" },
+        { "name": "Past Life Reading", "price": 45, "duration": "60 min" },
+        { "name": "Contact Past Loved One", "price": 116, "duration": "60 min" }
+      ]
+    }
+  ]
+}

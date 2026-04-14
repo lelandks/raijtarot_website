@@ -19,3 +19,42 @@ collections:
               - { label: "Client Name", name: "name", widget: "string" }
               - { label: "Review", name: "text", widget: "text" }
               - { label: "Service", name: "service", widget: "string" }
+
+  - name: "about"
+    label: "About Section"
+    files:
+      - label: "About"
+        name: "about"
+        file: "_data/about.json"
+        fields:
+          - { label: "Title Line 1", name: "title_line1", widget: "string" }
+          - { label: "Title Line 2", name: "title_line2", widget: "string" }
+          - { label: "Quote", name: "quote", widget: "string" }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+          - label: "Specialty Pills"
+            name: "pills"
+            widget: "list"
+            field: { label: "Specialty", name: "pill", widget: "string" }
+
+  - name: "services"
+    label: "Services & Pricing"
+    files:
+      - label: "Services"
+        name: "services"
+        file: "_data/services.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Category Name", name: "name", widget: "string" }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                fields:
+                  - { label: "Service Name", name: "name", widget: "string" }
+                  - { label: "Price ($)", name: "price", widget: "number", value_type: "float" }
+                  - { label: "Price Display (leave blank for standard)", name: "price_display", widget: "string", required: false, hint: "Only fill this for range prices e.g. $35 – $150" }
+                  - { label: "Duration (optional)", name: "duration", widget: "string", required: false, hint: "e.g. 60 min" }
+                  - { label: "Range pricing?", name: "range", widget: "boolean", default: false, required: false }

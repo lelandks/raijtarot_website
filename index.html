@@ -612,27 +612,16 @@
     <div class="about-visual">
       <div class="about-frame">
         <div class="big-glyph">☽</div>
-        <p>"Every card pulled is a mirror. Every limpia, a release."</p>
+        <p id="about-quote"></p>
         <div class="big-glyph" style="font-size:2rem; opacity:0.4">✦</div>
       </div>
     </div>
-    <div class="about-text">
+    <div class="about-text" id="about-text">
       <p class="section-label">About</p>
-      <h2 class="section-title">Rooted in Spirit.<br/>Guided by Truth.</h2>
+      <h2 class="section-title" id="about-title"></h2>
       <div class="gold-rule"><span>✦</span></div>
-      <p class="section-body">
-        Raij Tarot is a sacred space for healing, clarity, and transformation. Through tarot readings, spell work, and traditional limpias, we help you release what no longer serves and step into the energy you were always meant to carry.
-        <br/><br/>
-        Whether you're seeking answers about love, career, or the path ahead, every session is held with intention, respect, and care.
-      </p>
-      <div class="about-pills">
-        <span class="pill">Tarot Readings</span>
-        <span class="pill">Spell Work</span>
-        <span class="pill">Limpias</span>
-        <span class="pill">Spiritual Baths</span>
-        <span class="pill">Candle Magic</span>
-        <span class="pill">Cord Cutting</span>
-      </div>
+      <p class="section-body" id="about-body"></p>
+      <div class="about-pills" id="about-pills"></div>
     </div>
   </div>
 </section>
@@ -644,54 +633,7 @@
     <h2 class="section-title">Services &amp; Pricing</h2>
     <div class="gold-rule"><span>✦</span></div>
 
-    <div class="services-grid">
-
-      <!-- Candles & Spell Work -->
-      <div class="service-card">
-        <div class="service-card-cat">Candles &amp; Spell Work</div>
-        <ul class="service-list">
-          <li><span>Prepared Candles</span> <span class="price">$10</span></li>
-          <li><span>Candle Spells</span> <span class="price">$30</span></li>
-          <li>
-            <span>Custom Spell Work</span>
-            <span class="price">$35 – $150</span>
-          </li>
-          <li><span>Binding</span> <span class="price">$63</span></li>
-          <li><span>Cord Cutting</span> <span class="price">$63</span></li>
-        </ul>
-      </div>
-
-      <!-- Limpias & Washes -->
-      <div class="service-card">
-        <div class="service-card-cat">Limpias &amp; Washes</div>
-        <ul class="service-list">
-          <li><span>Limpia de Huevo <span class="service-note">(egg)</span></span><span class="price">$26</span></li>
-          <li><span>Herb Limpia</span> <span class="price">$26</span></li>
-          <li><span>Fire Limpia</span> <span class="price">$27</span></li>
-          <li><span>Road Opener Floor Wash</span> <span class="price">$35</span></li>
-          <li><span>Spiritual Bath</span> <span class="price">$35</span></li>
-          <li><span>House Limpia</span> <span class="price">$116</span></li>
-        </ul>
-      </div>
-
-      <!-- Tarot -->
-      <div class="service-card">
-        <div class="service-card-cat">Tarot Reading</div>
-        <ul class="service-list">
-          <li><span>Card of the Day</span> <span class="price">$8</span></li>
-          <li><span>Yes or No</span> <span class="price">$17</span></li>
-          <li><span>3 Card Pull</span> <span class="price">$26</span></li>
-          <li><span>Weekly Forecast <span class="service-note">45 min</span></span><span class="price">$26</span></li>
-          <li><span>General <span class="service-note">60 min</span></span><span class="price">$35</span></li>
-          <li><span>Career <span class="service-note">60 min</span></span><span class="price">$44</span></li>
-          <li><span>Finances <span class="service-note">60 min</span></span><span class="price">$44</span></li>
-          <li><span>Relationship <span class="service-note">60 min</span></span><span class="price">$45</span></li>
-          <li><span>Past Life <span class="service-note">60 min</span></span><span class="price">$45</span></li>
-          <li><span>Contact Past Loved One <span class="service-note">60 min</span></span><span class="price">$116</span></li>
-        </ul>
-      </div>
-
-    </div>
+    <div class="services-grid" id="services-grid"></div>
 
     <div style="text-align:center; margin-top:3rem;">
       <a href="#book" class="btn-primary">Book a Session</a>
@@ -770,33 +712,6 @@
           <label for="service">Service Requested</label>
           <select id="service" name="service" required>
             <option value="">Select a service</option>
-            <optgroup label="Tarot Reading">
-              <option>Card of the Day ($8 / deposit $4)</option>
-              <option>Yes or No ($17 / deposit $8.50)</option>
-              <option>3 Card Pull ($26 / deposit $13)</option>
-              <option>Weekly Forecast ($26 / deposit $13 / 45 min)</option>
-              <option>General Reading ($35 / deposit $17.50 / 60 min)</option>
-              <option>Career Reading ($44 / deposit $22 / 60 min)</option>
-              <option>Finances Reading ($44 / deposit $22 / 60 min)</option>
-              <option>Relationship Reading ($45 / deposit $22.50 / 60 min)</option>
-              <option>Past Life Reading ($45 / deposit $22.50 / 60 min)</option>
-              <option>Contact Past Loved One ($116 / deposit $58 / 60 min)</option>
-            </optgroup>
-            <optgroup label="Candles and Spell Work">
-              <option>Prepared Candles ($10 / deposit $5)</option>
-              <option>Candle Spells ($30 / deposit $15)</option>
-              <option>Custom Spell Work ($35 to $150 / deposit 50%)</option>
-              <option>Binding ($63 / deposit $31.50)</option>
-              <option>Cord Cutting ($63 / deposit $31.50)</option>
-            </optgroup>
-            <optgroup label="Limpias and Washes">
-              <option>Limpia de Huevo / Egg ($26 / deposit $13)</option>
-              <option>Herb Limpia ($26 / deposit $13)</option>
-              <option>Fire Limpia ($27 / deposit $13.50)</option>
-              <option>Road Opener Floor Wash ($35 / deposit $17.50)</option>
-              <option>Spiritual Bath ($35 / deposit $17.50)</option>
-              <option>House Limpia ($116 / deposit $58)</option>
-            </optgroup>
           </select>
         </div>
         <div class="form-group full">
@@ -921,7 +836,61 @@
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-  // Load testimonials from JSON
+  function fmt(price) {
+    return price % 1 === 0 ? `$${price}` : `$${price.toFixed(2)}`;
+  }
+  function deposit(price) {
+    const d = Math.round(price * 0.5 * 100) / 100;
+    return fmt(d);
+  }
+
+  // Load about
+  fetch('/_data/about.json')
+    .then(r => r.json())
+    .then(a => {
+      document.getElementById('about-title').innerHTML = `${a.title_line1}<br/>${a.title_line2}`;
+      document.getElementById('about-quote').textContent = `"${a.quote}"`;
+      document.getElementById('about-body').innerHTML = `${a.paragraph1}<br/><br/>${a.paragraph2}`;
+      document.getElementById('about-pills').innerHTML = a.pills.map(p => `<span class="pill">${p}</span>`).join('');
+    });
+
+  // Load services — renders cards and booking dropdown
+  fetch('/_data/services.json')
+    .then(r => r.json())
+    .then(data => {
+      // Service cards
+      document.getElementById('services-grid').innerHTML = data.categories.map(cat => `
+        <div class="service-card">
+          <div class="service-card-cat">${cat.name}</div>
+          <ul class="service-list">
+            ${cat.services.map(s => `
+              <li>
+                <span>${s.name}${s.duration ? ` <span class="service-note">${s.duration}</span>` : ''}</span>
+                <span class="price">${s.price_display || fmt(s.price)}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `).join('');
+
+      // Booking dropdown
+      const select = document.getElementById('service');
+      data.categories.forEach(cat => {
+        const group = document.createElement('optgroup');
+        group.label = cat.name;
+        cat.services.forEach(s => {
+          const priceLabel = s.price_display || fmt(s.price);
+          const depositLabel = s.range ? '50%' : deposit(s.price);
+          const dur = s.duration ? ` / ${s.duration}` : '';
+          const opt = document.createElement('option');
+          opt.textContent = `${s.name} (${priceLabel} / deposit ${depositLabel}${dur})`;
+          group.appendChild(opt);
+        });
+        select.appendChild(group);
+      });
+    });
+
+  // Load testimonials
   fetch('/_data/testimonials.json')
     .then(r => r.json())
     .then(data => {
