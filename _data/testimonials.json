@@ -1,0 +1,19 @@
+{
+  "testimonials": [
+    {
+      "name": "Client Name",
+      "text": "This is a placeholder review. Once you receive client testimonials, drop them in here. People will share their experience and how the reading helped them.",
+      "service": "General Reading"
+    },
+    {
+      "name": "Client Name",
+      "text": "Placeholder review two. Ask your satisfied clients to share a few sentences about their experience. Even DMs and IG comments count!",
+      "service": "Limpia de Huevo"
+    },
+    {
+      "name": "Client Name",
+      "text": "Placeholder review three. Real testimonials build trust fast, especially for spiritual services where connection and credibility matter deeply.",
+      "service": "Cord Cutting"
+    }
+  ]
+}

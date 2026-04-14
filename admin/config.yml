@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+
+collections:
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - label: "Testimonials List"
+        name: "testimonials"
+        file: "_data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Client Name", name: "name", widget: "string" }
+              - { label: "Review", name: "text", widget: "text" }
+              - { label: "Service", name: "service", widget: "string" }

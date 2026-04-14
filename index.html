@@ -828,26 +828,7 @@
     <h2 class="section-title">What People Are Saying</h2>
     <div class="gold-rule"><span>✦</span></div>
 
-    <div class="testimonials-grid">
-      <div class="tcard">
-        <div class="stars">★★★★★</div>
-        <p class="tcard-text">This is a placeholder review. Once you receive client testimonials, drop them in here. People will share their experience and how the reading helped them.</p>
-        <p class="tcard-author">Client Name</p>
-        <p class="tcard-service">General Reading</p>
-      </div>
-      <div class="tcard">
-        <div class="stars">★★★★★</div>
-        <p class="tcard-text">Placeholder review two. Ask your satisfied clients to share a few sentences about their experience. Even DMs and IG comments count!</p>
-        <p class="tcard-author">Client Name</p>
-        <p class="tcard-service">Limpia de Huevo</p>
-      </div>
-      <div class="tcard">
-        <div class="stars">★★★★★</div>
-        <p class="tcard-text">Placeholder review three. Real testimonials build trust fast, especially for spiritual services where connection and credibility matter deeply.</p>
-        <p class="tcard-author">Client Name</p>
-        <p class="tcard-service">Cord Cutting</p>
-      </div>
-    </div>
+    <div class="testimonials-grid" id="testimonials-grid"></div>
   </div>
 </section>
 
@@ -936,6 +917,35 @@
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+</script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Load testimonials from JSON
+  fetch('/_data/testimonials.json')
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('testimonials-grid');
+      grid.innerHTML = data.testimonials.map(t => `
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p class="tcard-text">${t.text}</p>
+          <p class="tcard-author">${t.name}</p>
+          <p class="tcard-service">${t.service}</p>
+        </div>
+      `).join('');
+    });
+
+  // Netlify Identity redirect
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
 </script>
 </body>
 </html>
