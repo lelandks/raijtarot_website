@@ -472,6 +472,30 @@
   .tcard-service { font-size: 0.7rem; color: rgba(250,245,240,0.35); margin-top: 0.2rem; }
   .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 0.5rem; }
 
+  /* ── TESTIMONIAL SUBMISSION ── */
+  #submit-testimonial {
+    background: linear-gradient(180deg, var(--deep), #2e1a3a);
+  }
+  .submit-testimonial-inner { max-width: 640px; margin: 0 auto; }
+  .testimonial-form {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,169,110,0.2);
+    padding: 3rem;
+    margin-top: 2rem;
+  }
+  .testimonial-success {
+    display: none;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .testimonial-success .success-icon {
+    font-size: 2rem; color: var(--gold); display: block; margin-bottom: 1rem;
+  }
+  .testimonial-success p {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    color: rgba(250,245,240,0.75); line-height: 1.7;
+  }
+
   /* ── FAQ ── */
   #faq {
     background: linear-gradient(180deg, #1a1025, #2e1a3a);
@@ -746,6 +770,46 @@
   </div>
 </section>
 
+<!-- SUBMIT TESTIMONIAL -->
+<section id="submit-testimonial">
+  <div class="submit-testimonial-inner">
+    <p class="section-label">Share Your Experience</p>
+    <h2 class="section-title">Leave a Review</h2>
+    <div class="gold-rule"><span>✦</span></div>
+
+    <form class="testimonial-form" name="testimonial-submission" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="testimonial-form">
+      <input type="hidden" name="form-name" value="testimonial-submission" />
+      <div style="display:none">
+        <input name="bot-field" />
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="t-name">Your Name</label>
+          <input type="text" id="t-name" name="name" required placeholder="e.g. Maria G." />
+        </div>
+        <div class="form-group">
+          <label for="t-service">Service Received</label>
+          <input type="text" id="t-service" name="service" required placeholder="e.g. Tarot Reading" />
+        </div>
+        <div class="form-group full">
+          <label for="t-review">Your Review</label>
+          <textarea id="t-review" name="review" required placeholder="Share your experience..." style="min-height:140px"></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer">Submit Review</button>
+      </div>
+    </form>
+
+    <div class="testimonial-success" id="testimonial-success">
+      <span class="success-icon">✦</span>
+      <p>Thank you for sharing your experience.<br/>Your review has been submitted and is pending approval.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="faq-inner">
@@ -899,6 +963,18 @@
         </div>
       `).join('');
     });
+
+  // Testimonial form submission
+  const tForm = document.getElementById('testimonial-form');
+  if (tForm) {
+    tForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(tForm);
+      await fetch('/', { method: 'POST', body: data });
+      tForm.style.display = 'none';
+      document.getElementById('testimonial-success').style.display = 'block';
+    });
+  }
 
   // Netlify Identity redirect
   if (window.netlifyIdentity) {
