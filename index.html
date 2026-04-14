@@ -885,7 +885,6 @@
   });
 </script>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
   function fmt(price) {
     return price % 1 === 0 ? `$${price}` : `$${price.toFixed(2)}`;
@@ -988,16 +987,6 @@
     });
   }
 
-  // Netlify Identity redirect
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
 </script>
 </body>
 </html>

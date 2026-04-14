@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lelandks/raijtarot_website
   branch: main
+  base_url: https://raij-tarot-oauth.lelandks.workers.dev
 
 media_folder: "images"
 
