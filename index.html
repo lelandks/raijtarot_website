@@ -470,7 +470,7 @@
     color: var(--gold);
   }
   .tcard-service { font-size: 0.7rem; color: rgba(250,245,240,0.35); margin-top: 0.2rem; }
-  .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 0.5rem; }
+
 
   /* ── TESTIMONIAL SUBMISSION ── */
   #submit-testimonial {
@@ -956,7 +956,7 @@
       const grid = document.getElementById('testimonials-grid');
       grid.innerHTML = data.testimonials.map(t => `
         <div class="tcard">
-          <div class="stars">★★★★★</div>
+
           <p class="tcard-text">${t.text}</p>
           <p class="tcard-author">${t.name}</p>
           <p class="tcard-service">${t.service}</p>
