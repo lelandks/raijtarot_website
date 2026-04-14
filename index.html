@@ -706,9 +706,10 @@
       Fill out the form below and we'll reach out within 24 to 48 hours to confirm your session date and time.
     </p>
 
-    <form class="book-form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="booking" />
-      <p style="display:none"><input name="bot-field" /></p>
+    <form class="book-form" name="booking" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="1f6fd013-1d64-46a6-b9c9-9369070100bd" />
+      <input type="hidden" name="subject" value="New Booking Request — Raij Tarot" />
+      <p style="display:none"><input name="botcheck" type="checkbox" /></p>
 
       <div class="deposit-banner">
         <div class="deposit-icon">✦</div>
@@ -777,10 +778,11 @@
     <h2 class="section-title">Leave a Review</h2>
     <div class="gold-rule"><span>✦</span></div>
 
-    <form class="testimonial-form" name="testimonial-submission" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="testimonial-form">
-      <input type="hidden" name="form-name" value="testimonial-submission" />
+    <form class="testimonial-form" name="testimonial-submission" method="POST" action="https://api.web3forms.com/submit" id="testimonial-form">
+      <input type="hidden" name="access_key" value="8e040778-0cc8-4329-825a-c3e4874d9f83" />
+      <input type="hidden" name="subject" value="New Testimonial Submission — Raij Tarot" />
       <div style="display:none">
-        <input name="bot-field" />
+        <input name="botcheck" type="checkbox" />
       </div>
 
       <div class="form-grid">
@@ -970,7 +972,7 @@
     tForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(tForm);
-      await fetch('/', { method: 'POST', body: data });
+      await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
       tForm.style.display = 'none';
       document.getElementById('testimonial-success').style.display = 'block';
     });
