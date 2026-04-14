@@ -754,39 +754,14 @@
     <h2 class="section-title">Frequently Asked</h2>
     <div class="gold-rule"><span>✦</span></div>
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Are sessions done in person or online? <span class="icon">+</span></div>
-        <div class="faq-a">Both options are available. When you fill out the booking form, just let us know your preference and we'll confirm what works best for your session type.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How do I pay? <span class="icon">+</span></div>
-        <div class="faq-a">We currently accept payment via Square. A 50% deposit is required to confirm your booking. The remaining balance is due at the time of your session. Payment details are sent once we confirm your request.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How long does it take to hear back after I submit a request? <span class="icon">+</span></div>
-        <div class="faq-a">We typically respond within 24 to 48 hours to confirm your session and go over any details. You'll be contacted via the email or phone number you provide.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What is a limpia? <span class="icon">+</span></div>
-        <div class="faq-a">A limpia is a traditional spiritual cleansing ritual rooted in Latin American folk healing practices. It removes heavy or stagnant energy from your body, home, or spirit using tools like eggs, herbs, fire, or floor washes depending on which service you choose.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do I need to prepare anything before my reading? <span class="icon">+</span></div>
-        <div class="faq-a">Come with an open mind and, optionally, a question or intention you want to focus on. You don't need to prepare anything specific. Just show up honest and ready to receive.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What is your cancellation policy? <span class="icon">+</span></div>
-        <div class="faq-a">Please reach out as soon as possible if you need to reschedule. Deposits are non-refundable for cancellations within 24 hours of your session. We understand life happens and will do our best to find a new time that works for both of us.</div>
-      </div>
-    </div>
+    <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p class="footer-logo">Raij Tarot</p>
-  <p class="footer-sub">Spell Work &amp; Tarot &nbsp;·&nbsp; raijtarot.com</p>
+  <p class="footer-sub">Spell Work &amp; Tarot</p>
 
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
@@ -806,15 +781,16 @@
 </footer>
 
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
     });
-  });
+  }
 
   // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
@@ -888,6 +864,19 @@
         });
         select.appendChild(group);
       });
+    });
+
+  // Load FAQ
+  fetch('/_data/faq.json')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('faq-list').innerHTML = data.faqs.map(f => `
+        <div class="faq-item">
+          <div class="faq-q">${f.question} <span class="icon">+</span></div>
+          <div class="faq-a">${f.answer}</div>
+        </div>
+      `).join('');
+      initFaqAccordion();
     });
 
   // Load testimonials

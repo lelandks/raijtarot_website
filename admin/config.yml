@@ -37,6 +37,20 @@ collections:
             widget: "list"
             field: { label: "Specialty", name: "pill", widget: "string" }
 
+  - name: "faq"
+    label: "FAQ"
+    files:
+      - label: "FAQ List"
+        name: "faq"
+        file: "_data/faq.json"
+        fields:
+          - label: "Questions"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
   - name: "services"
     label: "Services & Pricing"
     files:

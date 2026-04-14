@@ -1,0 +1,28 @@
+{
+  "faqs": [
+    {
+      "question": "Are sessions done in person or online?",
+      "answer": "Both options are available. When you fill out the booking form, just let us know your preference and we'll confirm what works best for your session type."
+    },
+    {
+      "question": "How do I pay?",
+      "answer": "We currently accept payment via Square. A 50% deposit is required to confirm your booking. The remaining balance is due at the time of your session. Payment details are sent once we confirm your request."
+    },
+    {
+      "question": "How long does it take to hear back after I submit a request?",
+      "answer": "We typically respond within 24 to 48 hours to confirm your session and go over any details. You'll be contacted via the email or phone number you provide."
+    },
+    {
+      "question": "What is a limpia?",
+      "answer": "A limpia is a traditional spiritual cleansing ritual rooted in Latin American folk healing practices. It removes heavy or stagnant energy from your body, home, or spirit using tools like eggs, herbs, fire, or floor washes depending on which service you choose."
+    },
+    {
+      "question": "Do I need to prepare anything before my reading?",
+      "answer": "Come with an open mind and, optionally, a question or intention you want to focus on. You don't need to prepare anything specific. Just show up honest and ready to receive."
+    },
+    {
+      "question": "What is your cancellation policy?",
+      "answer": "Please reach out as soon as possible if you need to reschedule. Deposits are non-refundable for cancellations within 24 hours of your session. We understand life happens and will do our best to find a new time that works for both of us."
+    }
+  ]
+}
