@@ -1,19 +1,17 @@
-const CACHE = 'raijtarot-v1';
-const ASSETS = [
+const CACHE = 'raijtarot-v2';
+const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/icons/icon-1024.png',
-  '/_data/hero.json',
-  '/_data/about.json',
-  '/_data/services.json',
-  '/_data/testimonials.json',
-  '/_data/faq.json',
 ];
+
+// Data files use network-first so CMS updates appear immediately
+const DATA_PATH = '/_data/';
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE).then(cache => cache.addAll(STATIC_ASSETS))
   );
 });
 
@@ -26,6 +24,23 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
+  const url = new URL(e.request.url);
+
+  // Network-first for data files so CMS edits are always reflected
+  if (url.pathname.startsWith(DATA_PATH)) {
+    e.respondWith(
+      fetch(e.request)
+        .then(response => {
+          const clone = response.clone();
+          caches.open(CACHE).then(cache => cache.put(e.request, clone));
+          return response;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // Cache-first for everything else
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
   );
